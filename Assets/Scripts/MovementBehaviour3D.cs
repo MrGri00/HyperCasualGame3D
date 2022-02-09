@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class MovementBehaviour3D : MonoBehaviour
 {
-    // EDITOR VARIABLES
+    // EDITOR VARIABLES //
     [SerializeField] private float speed = 10f;
 
-    // CALCULATIONS
+    // CALCULATIONS //
     Vector3 vect3 = new Vector3(0, 0, 0);
 
     public void Move(float input)
