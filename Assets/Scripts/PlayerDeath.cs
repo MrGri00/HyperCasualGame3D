@@ -16,6 +16,8 @@ public class PlayerDeath : MonoBehaviour
 
     void DeathMethod()
     {
-        GetComponent<PlayerController>().enabled = false;
+        PlayerController.partyList.Remove(gameObject);
+
+        gameObject.SetActive(false);
     }
 }

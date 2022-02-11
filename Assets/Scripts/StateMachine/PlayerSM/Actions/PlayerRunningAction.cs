@@ -8,6 +8,6 @@ public class PlayerRunningAction : StateMachine.Action
 {
     public override void Act(FatherController controller)
     {
-        controller.SetAnimation("hasCollided", false);
+        controller.SetAnimation("isWaiting", false);
     }
 }

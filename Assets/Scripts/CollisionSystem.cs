@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class CollisionSystem : MonoBehaviour
 {
-    [SerializeField]
-    protected int value = 1;
+    [SerializeField] protected int value = 1;
 
     private void OnCollisionEnter(Collision collision)
     {

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FatherController : MonoBehaviour
+public abstract class FatherController : MonoBehaviour
 {
     protected MovementBehaviour3D _movementBehaviour3D;
     protected Animator _animatorController;

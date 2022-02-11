@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f1cc2825ab0c0545b0944c636b732bb, type: 3}
-  m_Name: PlayerStumbleAction
+  m_Name: PlayerIdleAction
   m_EditorClassIdentifier: 
