@@ -8,15 +8,12 @@ public class PlayerController : FatherController
 
     public static List<GameObject> partyList = new List<GameObject>();
 
-    private void Awake()
+    private void Start()
     {
         _inputSystem = GetComponent<InputSystemKeyboard3D>();
         _movementBehaviour3D = GetComponent<MovementBehaviour3D>();
         _animatorController = GetComponent<Animator>();
-    }
 
-    private void Start()
-    {
         partyList.Add(gameObject);
     }
 
