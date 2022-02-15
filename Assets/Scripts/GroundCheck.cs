@@ -19,6 +19,11 @@ public class GroundCheck : CollisionSystem
         }
     }
 
+    private void OnCollisionStay(Collision collision)
+    {
+        OnCollision(collision);
+    }
+
     protected override void OnCollision(Collision other)
     {
         if (other.gameObject.tag.Equals("Ground"))
