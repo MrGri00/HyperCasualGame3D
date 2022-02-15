@@ -28,9 +28,7 @@ public class FollowerController : FatherController
         currentState.UpdateState(this);
 
         if (PlayerController.partyList.Contains(gameObject))
-        {
             _movementBehaviour3D.Move();
-        }
     }
 
     static void LongLiveTheKing(StateMachine.State state)

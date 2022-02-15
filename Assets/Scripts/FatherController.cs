@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class FatherController : MonoBehaviour
 {
-    protected MovementBehaviour3D _movementBehaviour3D;
+    public MovementBehaviour3D _movementBehaviour3D;
     protected Animator _animatorController;
 
     public StateMachine.State currentState;

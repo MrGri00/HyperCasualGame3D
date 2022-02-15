@@ -1955,6 +1955,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  jumpForce: 2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &7444733743501386067
 MonoBehaviour:
   m_ObjectHideFlags: 0

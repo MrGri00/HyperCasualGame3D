@@ -8,8 +8,6 @@ public class PlayerRunningDecision : StateMachine.Decision
 {
     public override bool Decide(FatherController controller)
     {
-        FollowerController followerC = (FollowerController)controller;
-
-        return PlayerController.partyList.Contains(followerC.gameObject);
+        return PlayerController.partyList.Contains(controller.gameObject);
     }
 }

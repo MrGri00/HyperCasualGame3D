@@ -22,5 +22,8 @@ public class PlayerController : FatherController
         currentState.UpdateState(this);
 
         _movementBehaviour3D.Move(_inputSystem.hor);
+
+        if (_inputSystem.jump)
+            _movementBehaviour3D.Jump();
     }
 }

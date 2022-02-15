@@ -6,8 +6,10 @@ public class MovementBehaviour3D : MonoBehaviour
 {
     // EDITOR VARIABLES //
     [SerializeField] private float speed = 10f;
+    [SerializeField] private float jumpForce = 3f;
 
     // CALCULATIONS //
+    [HideInInspector] public bool isGrounded = false;
     Vector3 playerOffset = new Vector3(0, 0, 0);
     Vector3 vect3 = new Vector3(0, 0, 0);
     Quaternion quat = new Quaternion(0, 0, 0, 0);
@@ -24,6 +26,19 @@ public class MovementBehaviour3D : MonoBehaviour
     public void Move()
     {
         GetComponent<Rigidbody>().MovePosition(GetPlayerPosition() - playerOffset);
+    }
+
+    public void Jump()
+    {
+        if (isGrounded)
+        {
+            vect3.x = 0;
+            vect3.y = jumpForce;
+            vect3.x = 0;
+
+            //GetComponent<Rigidbody>().velocity = vect3;
+            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
     }
 
     public void LookForward()

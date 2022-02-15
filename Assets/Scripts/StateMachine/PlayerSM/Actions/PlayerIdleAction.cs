@@ -9,5 +9,6 @@ public class PlayerIdleAction : StateMachine.Action
     public override void Act(FatherController controller)
     {
         controller.SetAnimation("isWaiting", true);
+        controller.SetAnimation("isGrounded", true);
     }
 }
