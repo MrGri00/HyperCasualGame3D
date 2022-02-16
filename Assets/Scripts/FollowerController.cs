@@ -23,7 +23,7 @@ public class FollowerController : FatherController
         PlayerDeath.OldKingIsDead -= LongLiveTheKing;
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         currentState.UpdateState(this);
 
