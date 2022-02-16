@@ -23,6 +23,15 @@ public class MovementBehaviour3D : MonoBehaviour
         transform.Translate(vect3 * speed * Time.deltaTime);
     }
 
+    public void CarMove()
+    {
+        vect3.x = transform.position.x;
+        vect3.y = 0;
+        vect3.z = -1;
+
+        transform.Translate(vect3 * speed * Time.deltaTime);
+    }
+
     public void Move()
     {
         GetComponent<Rigidbody>().MovePosition(GetPlayerPosition() - playerOffset);
@@ -51,6 +60,21 @@ public class MovementBehaviour3D : MonoBehaviour
     public void CalculatePlayerOffset()
     {
         playerOffset = GetPlayerPosition() - transform.position;
+        playerOffset.y = 0;
+    }
+
+    public float GetPlayerPositionY()
+    {
+        for (int i = 0; i < PlayerController.partyList.Count; i++)
+        {
+            if (PlayerController.partyList[i].GetComponent<PlayerController>())
+            {
+                vect3 = PlayerController.partyList[i].transform.position;
+                break;
+            }
+        }
+
+        return vect3.y;
     }
 
     public Vector3 GetPlayerPosition()
