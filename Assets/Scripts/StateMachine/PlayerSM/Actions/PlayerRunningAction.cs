@@ -10,5 +10,6 @@ public class PlayerRunningAction : StateMachine.Action
     {
         controller.SetAnimation("isWaiting", false);
         controller.SetAnimation("isGrounded", true);
+        controller.SetAnimation("hasFinished", false);
     }
 }

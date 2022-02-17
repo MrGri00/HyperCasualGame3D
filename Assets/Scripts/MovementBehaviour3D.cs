@@ -45,8 +45,8 @@ public class MovementBehaviour3D : MonoBehaviour
             vect3.y = jumpForce;
             vect3.x = 0;
 
-            //GetComponent<Rigidbody>().velocity = vect3;
-            GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            GetComponent<Rigidbody>().velocity = vect3;
+            //GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 

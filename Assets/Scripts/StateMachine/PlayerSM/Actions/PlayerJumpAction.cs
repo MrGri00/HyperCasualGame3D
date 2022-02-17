@@ -10,5 +10,6 @@ public class PlayerJumpAction : StateMachine.Action
     {
         controller.SetAnimation("isWaiting", false);
         controller.SetAnimation("isGrounded", false);
+        controller.SetAnimation("hasFinished", false);
     }
 }
