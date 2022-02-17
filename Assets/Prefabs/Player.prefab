@@ -1363,6 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14368dbe6a4dd444c8c9e1d5b9baeac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _movementBehaviour3D: {fileID: 0}
   currentState: {fileID: 11400000, guid: b53ea76c5a0fbd44aa8f758724f03dbd, type: 2}
 --- !u!114 &4904390697906513561
 MonoBehaviour:

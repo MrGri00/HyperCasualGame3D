@@ -23,11 +23,11 @@ public class MovementBehaviour3D : MonoBehaviour
         transform.Translate(vect3 * speed * Time.deltaTime);
     }
 
-    public void CarMove()
+    public void EnemyMove()
     {
-        vect3.x = transform.position.x;
+        vect3.x = 1;
         vect3.y = 0;
-        vect3.z = -1;
+        vect3.z = 0;
 
         transform.Translate(vect3 * speed * Time.deltaTime);
     }

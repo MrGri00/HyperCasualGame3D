@@ -60,4 +60,9 @@ public class HealthManager : MonoBehaviour
         maxHealth += addMaxHealth;
         ResetHealth();
     }
+
+    public void SetImmortality(bool immortal)
+    {
+        isImmortal = immortal;
+    }
 }

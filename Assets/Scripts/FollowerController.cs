@@ -33,18 +33,26 @@ public class FollowerController : FatherController
 
     static void LongLiveTheKing(StateMachine.State state)
     {
-        Destroy(PlayerController.partyList[0].GetComponent<FollowerController>());
-
-        PlayerController.partyList[0].AddComponent<PlayerController>();
-        PlayerController.partyList[0].AddComponent<InputSystemKeyboard3D>();
-
-        PlayerController.partyList[0].GetComponent<PlayerController>().currentState = state;
-
-        NewCamTarget(PlayerController.partyList[0].transform);
-
-        for (int i = 1; i < PlayerController.partyList.Count; i++)
+        if (PlayerController.partyList.Count > 0)
         {
-            PlayerController.partyList[i].GetComponent<MovementBehaviour3D>().CalculatePlayerOffset();
+            Destroy(PlayerController.partyList[0].GetComponent<FollowerController>());
+
+            PlayerController.partyList[0].AddComponent<PlayerController>();
+            PlayerController.partyList[0].AddComponent<InputSystemKeyboard3D>();
+
+            PlayerController.partyList[0].GetComponent<PlayerController>().currentState = state;
+
+            NewCamTarget(PlayerController.partyList[0].transform);
+
+            for (int i = 1; i < PlayerController.partyList.Count; i++)
+            {
+                PlayerController.partyList[i].GetComponent<MovementBehaviour3D>().CalculatePlayerOffset();
+            }
         }
+        else
+        {
+            // GAME OVER
+        }
+        
     }
 }

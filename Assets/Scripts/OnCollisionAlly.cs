@@ -18,6 +18,8 @@ public class OnCollisionAlly : CollisionSystem
             GetComponent<MovementBehaviour3D>().LookForward();
             GetComponent<MovementBehaviour3D>().CalculatePlayerOffset();
 
+            GetComponent<HealthManager>().SetImmortality(false);
+
             PlayerController.partyList.Add(gameObject);
 
             enabled = false;

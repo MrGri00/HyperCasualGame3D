@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6732649449632770139}
   - component: {fileID: 6732649449636917459}
   - component: {fileID: 3491195612754706519}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bench002
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

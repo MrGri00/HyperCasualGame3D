@@ -6,6 +6,6 @@ public class CarController : MonoBehaviour
 {
     void Update()
     {
-        GetComponent<MovementBehaviour3D>().CarMove();
+        GetComponent<MovementBehaviour3D>().EnemyMove();
     }
 }
