@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
+    public static Action GameOver = delegate { };
     public static Action<StateMachine.State> OldKingIsDead = delegate { };
 
     private void OnEnable()
@@ -21,7 +22,10 @@ public class PlayerDeath : MonoBehaviour
     {
         PlayerController.partyList.Remove(gameObject);
 
-        if (GetComponent<PlayerController>())
+        if (PlayerController.partyList.Count <= 0)
+            GameOver();
+
+        else if (GetComponent<PlayerController>())
             OldKingIsDead(GetComponent<PlayerController>().currentState);
 
         gameObject.SetActive(false);

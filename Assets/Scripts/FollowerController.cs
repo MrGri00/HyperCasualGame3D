@@ -48,11 +48,8 @@ public class FollowerController : FatherController
             {
                 PlayerController.partyList[i].GetComponent<MovementBehaviour3D>().CalculatePlayerOffset();
             }
-        }
-        else
-        {
-            // GAME OVER
-        }
-        
+
+            ProgressionBar.UpdatePlayerRef(PlayerController.partyList[0].transform);
+        }       
     }
 }

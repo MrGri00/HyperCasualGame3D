@@ -15,7 +15,7 @@ public class OnCollisionAlly : CollisionSystem
 
             GetComponentInChildren<SkinnedMeshRenderer>().material = playerMaterial;
 
-            GetComponent<MovementBehaviour3D>().LookForward();
+            GetComponent<MovementBehaviour3D>().RotateY(-90);
             GetComponent<MovementBehaviour3D>().CalculatePlayerOffset();
 
             GetComponent<HealthManager>().SetImmortality(false);

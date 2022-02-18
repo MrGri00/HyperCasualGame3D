@@ -7,6 +7,7 @@ public class MovementBehaviour3D : MonoBehaviour
     // EDITOR VARIABLES //
     [SerializeField] private float speed = 10f;
     [SerializeField] private float jumpForce = 3f;
+    [SerializeField] private float absoluteLimitZ = 11f;
 
     // CALCULATIONS //
     [HideInInspector] public bool isGrounded = false;
@@ -16,11 +17,28 @@ public class MovementBehaviour3D : MonoBehaviour
 
     public void Move(float input)
     {
+        if ((transform.position.z >= absoluteLimitZ && input > 0) || (transform.position.z <= -absoluteLimitZ && input < 0))
+            input = 0;
+
         vect3.x = input;
         vect3.y = 0;
         vect3.z = 1;
 
         transform.Translate(vect3 * speed * Time.deltaTime);
+    }
+
+    public void Move()
+    {
+        GetComponent<Rigidbody>().MovePosition(GetPlayerPosition() - playerOffset);
+
+        if (transform.position.z >= absoluteLimitZ || transform.position.z <= -absoluteLimitZ)
+        {
+            vect3.x = transform.position.x;
+            vect3.y = transform.position.y;
+            vect3.z = absoluteLimitZ * Mathf.Sign(transform.position.z);
+
+            transform.position = vect3;
+        }
     }
 
     public void EnemyMove()
@@ -32,27 +50,22 @@ public class MovementBehaviour3D : MonoBehaviour
         transform.Translate(vect3 * speed * Time.deltaTime);
     }
 
-    public void Move()
-    {
-        GetComponent<Rigidbody>().MovePosition(GetPlayerPosition() - playerOffset);
-    }
-
     public void Jump()
     {
         if (isGrounded)
         {
             vect3.x = 0;
             vect3.y = jumpForce;
-            vect3.x = 0;
+            vect3.z = 0;
 
             GetComponent<Rigidbody>().velocity = vect3;
             //GetComponent<Rigidbody>().AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 
-    public void LookForward()
+    public void RotateY(float y)
     {
-        quat = Quaternion.Euler(0, -90, 0);
+        quat = Quaternion.Euler(0, y, 0);
 
         transform.rotation = quat;
     }

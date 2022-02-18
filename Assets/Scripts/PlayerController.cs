@@ -15,6 +15,8 @@ public class PlayerController : FatherController
         _animatorController = GetComponent<Animator>();
 
         partyList.Add(gameObject);
+
+        ProgressionBar.UpdatePlayerRef(transform);
     }
 
     private void Update()
