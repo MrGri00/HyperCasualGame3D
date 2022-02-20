@@ -43,5 +43,12 @@ public class ButtonBehaviour : MonoBehaviour
 
         Application.Quit();
     }
+
+    public void AdvanceSceneButton()
+    {
+        Time.timeScale = 1f;
+
+        SceneTransition.NextScene();
+    }
 }
 

@@ -11,7 +11,6 @@ public class FinishLine : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("Level finished");
             LevelFinished();
         }
     }

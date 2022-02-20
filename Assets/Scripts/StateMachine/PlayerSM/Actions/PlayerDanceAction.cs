@@ -11,5 +11,8 @@ public class PlayerDanceAction : StateMachine.Action
         controller.SetAnimation("isWaiting", false);
         controller.SetAnimation("isGrounded", true);
         controller.SetAnimation("hasFinished", true);
+
+        //controller.gameObject.GetComponent<FatherController>().enabled = false;
+        //controller.gameObject.GetComponent<VictoryBehaviour>().enabled = true;
     }
 }

@@ -6,7 +6,7 @@ using StateMachine;
 [CreateAssetMenu(menuName = "StateMachine/Player/Decisions/Finished")]
 public class PlayerFinishedDecision : StateMachine.Decision
 {
-    [SerializeField] float finishLineX = -615f;
+    [SerializeField] float finishLineX = -630f;
 
     public override bool Decide(FatherController controller)
     {
