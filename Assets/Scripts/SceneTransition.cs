@@ -35,4 +35,14 @@ public static class SceneTransition
         GC.Collect();
         SceneManager.LoadScene(sceneName);
     }
+
+    public static int GetSceneIndex()
+    {
+        return SceneManager.GetActiveScene().buildIndex;
+    }
+
+    public static int GetTotalScenes()
+    {
+        return SceneManager.sceneCount;
+    }
 }

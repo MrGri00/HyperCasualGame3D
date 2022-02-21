@@ -11,12 +11,14 @@ public class MenuManager : MonoBehaviour
     {
         PlayerDeath.GameOver += OpenGameOverMenu;
         InputSystemKeyboard3D.PauseGame += OpenPauseMenu;
+        FinishLine.LevelFinished += OpenVictoryMenu;
     }
 
     private void OnDisable()
     {
         PlayerDeath.GameOver -= OpenGameOverMenu;
         InputSystemKeyboard3D.PauseGame -= OpenPauseMenu;
+        FinishLine.LevelFinished -= OpenVictoryMenu;
     }
 
     public void OpenMenu(string menuName)
@@ -38,6 +40,13 @@ public class MenuManager : MonoBehaviour
         }
 
         Time.timeScale = 1f;
+    }
+
+    public void OpenVictoryMenu()
+    {
+        OpenMenu("VictoryMenu");
+
+        Time.timeScale = 0f;
     }
 
     public void OpenGameOverMenu()

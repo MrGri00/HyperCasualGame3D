@@ -27,6 +27,8 @@ public class ButtonBehaviour : MonoBehaviour
     {
         SceneTransition.ReloadScene();
 
+        PlayerController.partyList.Clear();
+
         Time.timeScale = 1f;
     }
 
@@ -48,7 +50,12 @@ public class ButtonBehaviour : MonoBehaviour
     {
         Time.timeScale = 1f;
 
-        SceneTransition.NextScene();
+        PlayerController.partyList.Clear();
+
+        if (SceneTransition.GetSceneIndex() >= SceneTransition.GetTotalScenes() - 1)
+            SceneTransition.GoToScene(0);
+        else
+            SceneTransition.NextScene();
     }
 }
 
