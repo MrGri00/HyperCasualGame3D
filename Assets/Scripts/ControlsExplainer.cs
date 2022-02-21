@@ -49,10 +49,6 @@ public class ControlsExplainer : MonoBehaviour
             case KeyCode.Escape:
                 text.text = "Open the pause menu";
                 break;
-
-            /*default:
-                text.text = "Press the buttons above to check the controls";
-                break;*/
         }
     }
 }

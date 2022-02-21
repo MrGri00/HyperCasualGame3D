@@ -1857,6 +1857,7 @@ GameObject:
   - component: {fileID: 7444733743501386067}
   - component: {fileID: 7444733743501386066}
   - component: {fileID: 7532960531569779965}
+  - component: {fileID: 3151330829772118363}
   m_Layer: 9
   m_Name: Follower
   m_TagString: Follower
@@ -1957,6 +1958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpForce: 2
+  absoluteLimitZ: 11
   isGrounded: 0
 --- !u!114 &7444733743501386067
 MonoBehaviour:
@@ -1999,6 +2001,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 1
   playerMaterial: {fileID: 2100000, guid: 5bce78a62e3c3c24da8a23b18cc927e3, type: 2}
+--- !u!114 &3151330829772118363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7444733743501386070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1751c99b0cbad4c448105facc638690e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxToPlay: {fileID: 8300000, guid: d36beebad4f349945aa3ee6175475f8a, type: 3}
 --- !u!1 &7606379999089122881
 GameObject:
   m_ObjectHideFlags: 0
