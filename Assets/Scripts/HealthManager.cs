@@ -25,7 +25,15 @@ public class HealthManager : MonoBehaviour
             currentHealth -= dmg;
 
             if (currentHealth <= 0)
-                Death();
+            {
+#if __DEBUG_MODE_AVALIABLE__
+                if (!DebugSwitches.debugMode || !DebugSwitches.debugUndying) {
+#endif
+                    Death();
+#if __DEBUG_MODE_AVALIABLE__
+                }
+#endif
+            }
         }
     }
 

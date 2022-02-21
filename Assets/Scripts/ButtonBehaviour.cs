@@ -63,5 +63,14 @@ public class ButtonBehaviour : MonoBehaviour
     {
         SceneTransition.GoToScene(SceneTransition.GetTotalScenes() + 1);
     }
+
+    public void ControlsButton()
+    {
+        if (menuManager.GetCurrentMenu() != "ControlsMenu")
+            menuManager.OpenMenu("ControlsMenu");
+
+        else
+            menuManager.CloseAllMenus();
+    }
 }
 
