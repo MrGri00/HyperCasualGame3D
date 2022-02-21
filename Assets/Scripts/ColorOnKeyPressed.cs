@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,12 @@ using UnityEngine.UI;
 
 public class ColorOnKeyPressed : MonoBehaviour
 {
-    [SerializeField] KeyCode key;
-    [SerializeField] Color colorIfTrue;
-    [SerializeField] Color colorIfFalse;
+    public Action<KeyCode> ControlKeyPressed = delegate { };
+
+    public KeyCode key;
 
     Text text;
     Color color = new Color();
-    float r = 0f;
-    float g = 0f;
-    float b = 0f;
 
     private void Awake()
     {
@@ -27,12 +25,12 @@ public class ColorOnKeyPressed : MonoBehaviour
         if (Input.GetKey(key))
         {
             ColorUtility.TryParseHtmlString("#00FF2D", out color);
-            //text.color = colorIfTrue;
+            ControlKeyPressed(key);
         }
         else
         {
             ColorUtility.TryParseHtmlString("#ECECEC", out color);
-            text.color = colorIfFalse;
+            ControlKeyPressed(KeyCode.None);
         }
 
         text.color = color;

@@ -727,7 +727,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '"To my dearest chemist, may our first year together be the first of many"'
+  m_Text: '"To my dearest chemist, may this year together be the first of many"'
 --- !u!222 &1227093414
 CanvasRenderer:
   m_ObjectHideFlags: 0
