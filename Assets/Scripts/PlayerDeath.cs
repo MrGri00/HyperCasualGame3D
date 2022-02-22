@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
+    public static Action<Vector3> Dead = delegate { };
     public static Action GameOver = delegate { };
     public static Action<StateMachine.State> OldKingIsDead = delegate { };
 
@@ -27,6 +28,8 @@ public class PlayerDeath : MonoBehaviour
 
         else if (GetComponent<PlayerController>())
             OldKingIsDead(GetComponent<PlayerController>().currentState);
+
+        Dead(transform.position);
 
         gameObject.SetActive(false);
     }
