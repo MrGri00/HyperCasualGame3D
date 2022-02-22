@@ -52,11 +52,7 @@ public class ButtonBehaviour : MonoBehaviour
 
         PlayerController.partyList.Clear();
 
-        if (SceneTransition.GetSceneIndex() >= SceneTransition.GetTotalScenes() && 
-            SceneTransition.GetSceneIndex() != 0)
-            SceneTransition.GoToScene(0);
-        else
-            SceneTransition.NextScene();
+        SceneTransition.NextScene();
     }
 
     public void CreditsButton()
