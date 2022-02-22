@@ -51,9 +51,12 @@ public static class DebugMethods
     [MenuItem("ImplementedTools/Debug Mode/Remove Follower &#DOWN", false, 1)]
     public static void DebugRemoveFollower()
     {
-        PlayerController.partyList.Remove(PlayerController.partyList[PlayerController.partyList.Count - 1]);
+        if (PlayerController.partyList.Count > 1)
+        {
+            PlayerController.partyList.Remove(PlayerController.partyList[PlayerController.partyList.Count - 1]);
 
-        PlayerController.partyList[PlayerController.partyList.Count - 1].SetActive(false);
+            PlayerController.partyList[PlayerController.partyList.Count - 1].SetActive(false);
+        }
     }
 
     [MenuItem("ImplementedTools/Debug Mode/Load Level 1 &#1", false, 1)]

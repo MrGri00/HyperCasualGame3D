@@ -41,7 +41,7 @@ public class MovementBehaviour3D : MonoBehaviour
         }
     }
 
-    public void EnemyMove()
+    public void CarMove()
     {
         vect3.x = 1;
         vect3.y = 0;
