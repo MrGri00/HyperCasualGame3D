@@ -57,7 +57,7 @@ public class ButtonBehaviour : MonoBehaviour
 
     public void CreditsButton()
     {
-        SceneTransition.GoToScene(SceneTransition.GetTotalScenes() + 1);
+        SceneTransition.GoToScene("Credits");
     }
 
     public void ControlsButton()
