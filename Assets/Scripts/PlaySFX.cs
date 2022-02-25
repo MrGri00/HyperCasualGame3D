@@ -6,6 +6,8 @@ public abstract class PlaySFX : MonoBehaviour
 {
     public AudioClip sfxToPlay;
 
+    public AudioSource audioSource;
+
     bool canPlay = true;
 
     protected void PlayAudio()
@@ -14,7 +16,9 @@ public abstract class PlaySFX : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(sfxToPlay, transform.position);
             canPlay = false;
-            StartCoroutine(CooldownSFX());
+
+            if (gameObject.activeInHierarchy)
+                StartCoroutine(CooldownSFX());
         }
     }
 

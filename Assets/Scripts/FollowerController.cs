@@ -31,7 +31,7 @@ public class FollowerController : FatherController
             _movementBehaviour3D.Move();
     }
 
-    static void LongLiveTheKing(StateMachine.State state)
+    static void LongLiveTheKing(StateMachine.State state, AudioClip jump)
     {
         if (PlayerController.partyList.Count > 0)
         {
@@ -45,6 +45,12 @@ public class FollowerController : FatherController
 
             if (!PlayerController.partyList[0].GetComponent<GroundCheck>())
                 PlayerController.partyList[0].AddComponent<GroundCheck>();
+
+            if (!PlayerController.partyList[0].GetComponent<JumpSFX>())
+            {
+                PlayerController.partyList[0].AddComponent<JumpSFX>();
+                PlayerController.partyList[0].GetComponent<JumpSFX>().sfxToPlay = jump;
+            }
 
             PlayerController.partyList[0].GetComponent<PlayerController>().currentState = state;
 

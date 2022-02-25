@@ -7,7 +7,7 @@ public class PlayerDeath : MonoBehaviour
 {
     public static Action<Vector3> Dead = delegate { };
     public static Action GameOver = delegate { };
-    public static Action<StateMachine.State> OldKingIsDead = delegate { };
+    public static Action<StateMachine.State, AudioClip> OldKingIsDead = delegate { };
 
     bool isDead = false;
 
@@ -42,7 +42,7 @@ public class PlayerDeath : MonoBehaviour
         if (GetComponent<PlayerController>())
         {
             PlayerController.partyList.RemoveAt(0);
-            OldKingIsDead(GetComponent<PlayerController>().currentState);
+            OldKingIsDead(GetComponent<PlayerController>().currentState, GetComponent<JumpSFX>().sfxToPlay);
         }
         else
         {
