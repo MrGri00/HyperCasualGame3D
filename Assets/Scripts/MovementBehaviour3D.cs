@@ -6,7 +6,7 @@ public class MovementBehaviour3D : MonoBehaviour
 {
     // EDITOR VARIABLES //
     [SerializeField] private float speed = 10f;
-    [SerializeField] private float jumpForce = 3f;
+    [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float absoluteLimitZ = 11f;
 
     // CALCULATIONS //

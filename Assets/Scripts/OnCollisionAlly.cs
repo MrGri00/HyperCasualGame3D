@@ -6,10 +6,14 @@ public class OnCollisionAlly : CollisionSystem
 {
     [SerializeField] private Material playerMaterial = null;
 
+    bool hasConverted = false;
+
     protected override void OnCollision(Collision other)
     {
-        if (other.gameObject.tag.Equals("Player"))
+        if (other.gameObject.tag.Equals("Player") && !hasConverted)
         {
+            hasConverted = true;
+
             gameObject.tag = other.gameObject.tag;
             gameObject.layer = other.gameObject.layer;
 

@@ -37,8 +37,14 @@ public class FollowerController : FatherController
         {
             Destroy(PlayerController.partyList[0].GetComponent<FollowerController>());
 
-            PlayerController.partyList[0].AddComponent<PlayerController>();
-            PlayerController.partyList[0].AddComponent<InputSystemKeyboard3D>();
+            if (!PlayerController.partyList[0].GetComponent<PlayerController>())
+                PlayerController.partyList[0].AddComponent<PlayerController>();
+
+            if (!PlayerController.partyList[0].GetComponent<InputSystemKeyboard3D>())
+                PlayerController.partyList[0].AddComponent<InputSystemKeyboard3D>();
+
+            if (!PlayerController.partyList[0].GetComponent<GroundCheck>())
+                PlayerController.partyList[0].AddComponent<GroundCheck>();
 
             PlayerController.partyList[0].GetComponent<PlayerController>().currentState = state;
 

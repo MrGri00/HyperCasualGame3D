@@ -9,6 +9,8 @@ public class PlayerDeath : MonoBehaviour
     public static Action GameOver = delegate { };
     public static Action<StateMachine.State> OldKingIsDead = delegate { };
 
+    bool isDead = false;
+
     private void OnEnable()
     {
         GetComponent<HealthManager>().Death += DeathMethod;
@@ -21,16 +23,36 @@ public class PlayerDeath : MonoBehaviour
 
     void DeathMethod()
     {
-        PlayerController.partyList.Remove(gameObject);
+        if (!isDead)
+        {
+            isDead = true;
+            StartCoroutine(DeathCoroutine());
+        }
+    }
 
-        if (PlayerController.partyList.Count <= 0)
+    IEnumerator DeathCoroutine()
+    {
+        if (PlayerController.partyList.Count <= 1)
+        {
             GameOver();
 
-        else if (GetComponent<PlayerController>())
+            yield return null;
+        }
+
+        if (GetComponent<PlayerController>())
+        {
+            PlayerController.partyList.RemoveAt(0);
             OldKingIsDead(GetComponent<PlayerController>().currentState);
+        }
+        else
+        {
+            PlayerController.partyList.Remove(gameObject);
+        }
 
         Dead(transform.position);
 
         gameObject.SetActive(false);
+
+        yield return null;
     }
 }

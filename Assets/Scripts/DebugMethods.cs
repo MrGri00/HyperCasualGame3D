@@ -38,20 +38,23 @@ public static class DebugMethods
     [MenuItem("ImplementedTools/Debug Mode/Add Follower &#UP", false, 1)]
     public static void DebugAddFollower()
     {
-        followerPrefab = PoolingManager.Instance.GetPooledObject("ExtraFollowers");
+        if (DebugSwitches.debugMode)
+        {
+            followerPrefab = PoolingManager.Instance.GetPooledObject("ExtraFollowers");
 
-        posCalc = PlayerController.partyList[PlayerController.partyList.Count - 1].transform.position;
-        posCalc.x -= 15;
+            posCalc = PlayerController.partyList[PlayerController.partyList.Count - 1].transform.position;
+            posCalc.x -= 15;
 
-        followerPrefab.transform.position = posCalc;
+            followerPrefab.transform.position = posCalc;
 
-        followerPrefab.SetActive(true);
+            followerPrefab.SetActive(true);
+        }
     }
 
     [MenuItem("ImplementedTools/Debug Mode/Remove Follower &#DOWN", false, 1)]
     public static void DebugRemoveFollower()
     {
-        if (PlayerController.partyList.Count > 1)
+        if (PlayerController.partyList.Count > 1 && DebugSwitches.debugMode)
         {
             PlayerController.partyList.Remove(PlayerController.partyList[PlayerController.partyList.Count - 1]);
 

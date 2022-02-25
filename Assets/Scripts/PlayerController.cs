@@ -14,7 +14,8 @@ public class PlayerController : FatherController
         _movementBehaviour3D = GetComponent<MovementBehaviour3D>();
         _animatorController = GetComponent<Animator>();
 
-        partyList.Add(gameObject);
+        if (!partyList.Contains(gameObject))
+            partyList.Add(gameObject);
 
         ProgressionBar.UpdatePlayerRef(transform);
     }
