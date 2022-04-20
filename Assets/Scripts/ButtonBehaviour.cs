@@ -68,5 +68,10 @@ public class ButtonBehaviour : MonoBehaviour
         else
             menuManager.CloseAllMenus();
     }
+
+    public void CoinsButton(GameObject coinPanel)
+    {
+        coinPanel.SetActive(false);
+    }
 }
 

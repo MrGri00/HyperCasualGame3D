@@ -17,5 +17,8 @@ public class InputSystemKeyboard3D : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
             PauseGame();
+
+        if (Input.GetKeyDown(KeyCode.F5))
+            _ExamMethods.E4_EndTeleport();
     }
 }

@@ -103,4 +103,18 @@ public class MovementBehaviour3D : MonoBehaviour
 
         return vect3;
     }
+
+    public void MultiplySpeedFor(float multiplySpeed, float time)
+    {
+        StartCoroutine(MultiplySpeed(multiplySpeed, time));
+    }
+
+    IEnumerator MultiplySpeed(float multiplySpeed, float time)
+    {
+        speed *= multiplySpeed;
+
+        yield return new WaitForSeconds(time);
+
+        speed /= multiplySpeed;
+    }
 }

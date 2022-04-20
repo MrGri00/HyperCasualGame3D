@@ -11,17 +11,17 @@ public class PlayerDeath : MonoBehaviour
 
     bool isDead = false;
 
-    private void OnEnable()
+    void OnEnable()
     {
         GetComponent<HealthManager>().Death += DeathMethod;
     }
 
-    private void OnDisable()
+    void OnDisable()
     {
         GetComponent<HealthManager>().Death -= DeathMethod;
     }
 
-    void DeathMethod()
+    virtual protected void DeathMethod()
     {
         if (!isDead)
         {
